@@ -1,0 +1,56 @@
+
+	<!--左侧列表-->
+        <div class="menu" style="height:570px">
+        
+            <div class="cont">
+                <div class="title">管理员</div>
+
+                <ul class="mList">
+                    <li>
+                        <h3 style="color:#fff"><span onclick="show('menu1','change1')" id="change1" style="color:#fff">+</span>导航栏的信息管理</h3>
+                        <dl id="menu1" style="display:none;">
+                        <volist name = 'result1' id = 'res'>
+                        <dd><a href="__APP__/Home/Navigation/ruKou/id/{$res['news_id']}">{$res['title']}</a></dd>
+                        </volist>
+                        <dd><a href="{:U('Home/Navigation/showSet')}">导航设置</a></dd>
+                        </dl>
+                    </li>
+                    
+                    <li>
+                        <h3 style="color:#fff"><span onclick="show('menu2','change2')" id="change2" style="color:#fff">+</span>首页信息管理</h3>
+                        <dl id="menu2" style="display:;">
+                            <volist name = 'result2' id = 'res'>
+                        <dd><a href="__APP__/Home/HomePage/ruKou/id/{$res['news_id']}">{$res['title']}</a></dd>
+                        </volist>
+                        <dd><a href="{:U('Home/HomePage/showSet')}">首页设置</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <h3 style="color:#fff"><span onclick="show('menu3','change3')" id="change3" style="color:#fff">-</span>管理员信息管理</h3>
+                        <dl id="menu3" style="display:none;">
+                            <dd><a href="{:U('Home/Manager/showUpdPassword')}">密码修改</a></dd>
+                        </dl>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    	function show(num,change){
+	    		var menu=document.getElementById(num);
+	    		var change=document.getElementById(change);
+	    		if(change.innerHTML=="+"){
+	    				change.innerHTML="-";
+	        	}else{
+						change.innerHTML="+";
+	            }
+    		   if(menu.style.display=='none'){
+    	             menu.style.display='';
+    		    }else{
+    		         menu.style.display='none';
+    		    } 
+        }
+    </script>
+</body>
+</html>
