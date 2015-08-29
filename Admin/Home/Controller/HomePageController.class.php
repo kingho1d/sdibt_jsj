@@ -40,7 +40,10 @@ public  function ruKou(){
         $page->setConfig('header','篇文章');
         $show = $page->show();
          
-        $result=$sql->where($where)->limit("$page->firstRow,$page->listRows")->select();
+        $result=$sql->where($where)
+        ->order('addtime desc')
+        ->limit("$page->firstRow,$page->listRows")
+        ->select();
         $this->assign('result',$result);
         $this->assign('show',$show);
         //导航栏

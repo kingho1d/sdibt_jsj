@@ -65,9 +65,8 @@
 								<label for="textdesc">Describe your Text</label><br/>
 								<textarea  class="large full" id="editor" name="content1" style="height:260px"></textarea>
 								 <script type="text/javascript">
-    								//实例化编辑器
-   									 //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-  								  var ue = UE.getEditor('editor');
+									 var ue = UE.getEditor('editor');
+								  
     							</script>
 							</p>		
 							<p class="box"><input type="submit" class="btn btn-green big" value="Save"/> or 
@@ -87,7 +86,7 @@
 
                 <ul class="mList">
                     <li>
-                        <h3 style="color:#fff"><span onclick="show('menu1','change1')" id="change1" style="color:#fff">+</span>导航栏的设置</h3>
+                        <h3 style="color:#fff"><span onclick="show('menu1','change1')" id="change1" style="color:#fff">+</span>导航栏的信息管理</h3>
                         <dl id="menu1" style="display:none;">
                         <?php if(is_array($result1)): $i = 0; $__LIST__ = $result1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$res): $mod = ($i % 2 );++$i;?><dd><a href="/sdibt_jsj/admin.php/Home/Navigation/ruKou/id/<?php echo ($res['news_id']); ?>"><?php echo ($res['title']); ?></a></dd><?php endforeach; endif; else: echo "" ;endif; ?>
                         <dd><a href="<?php echo U('Home/Navigation/showSet');?>">导航设置</a></dd>
